@@ -1,0 +1,1 @@
+cat series.json | jq '([.works[].books_count | tonumber] | add), .title, .id' | paste -d " " - - - | sort -n -r | head -n5
