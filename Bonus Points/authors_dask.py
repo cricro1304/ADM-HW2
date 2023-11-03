@@ -15,6 +15,7 @@ print(filtered_data_frame[["name", "text_reviews_count"]])
 end = time.time()
 print(end - start)
 
+# by running this script with dask, it took 276.53 seconds
 
 # Do the same using Pandas and compare performance in terms of milliseconds.
 import pandas as pd
@@ -43,3 +44,7 @@ print(filtered_data)
 
 end = time.time()
 print(end - start)
+
+# by running this script with pandas, it took 1762.75 seconds. it has been slightly changed if compared with the one used with dask
+# since it was taking too much using the same script. to optimize the code a bit we chose to split the dataset in more chunks.
+# even by adopting these changes, it took about 5 times longer than when we used dask.
